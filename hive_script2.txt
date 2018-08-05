@@ -1,0 +1,7 @@
+SELECT p.category, count( p.category) as totalvisit,l.country
+FROM logs l
+join users u on u.swid= l.swid
+join products p on p.url= l.url
+group by p.category,l.country
+Order by totalvisit DESC
+Limit 5;

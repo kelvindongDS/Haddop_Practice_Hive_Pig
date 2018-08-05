@@ -1,0 +1,30 @@
+create external table users
+(
+  SWID string,
+  BIRTH_DT string,
+  GENDER_CD string
+)
+
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' Location '/user/dir1/log/po_users/';
+
+
+create external table products 
+(
+  url string,
+  category string
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION '/user/dir1/log/po_products';
+
+
+create external table logs 
+(
+  logdate string,
+  url string, 
+  ip string,
+  city string,
+  state string, 
+  country string,
+  swid string
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION '/user/dir1/log/parsed_logs'
+
